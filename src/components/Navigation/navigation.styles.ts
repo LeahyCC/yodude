@@ -1,48 +1,82 @@
-import { css, keyframes } from '@emotion/css'
+import { css } from '@emotion/css'
 
-const Nav = css`
+export const Nav = css`
   position: fixed;
   left: 0;
   top: 0;
   bottom: 0;
-  width: 200px;
+  width: 40px;
   background-color: rgba(6, 6, 6, 0.5);
   box-shadow: inset -40px 0px 0px 0px rgba(6, 6, 6, 0.2);
-
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: width 300ms ease-in-out;
 `
 
-const fly = keyframes`
-  0% {
-    bottom: 10px;
-    left: 15px;
-  }
-  100% {
-    bottom: 2000px;
-    left: 15px;
-  }
+export const NavOpen = css`
+  width: 200px !important;
 `
 
-const Rocket = (isFlying: boolean) => css`
-  position: absolute;
-  cursor: pointer;
-  bottom: 10px;
-  left: 15px;
-  transform: rotate(-45deg);
-  width: 50px;
-
-  animation: ${isFlying ? `${fly} 0.8s ease-in 1` : 'none'};
+export const NavContainer = css`
+  overflow: hidden;
 `
 
-const NavItem = css`
+export const NavItem = css`
+  position: relative;
   color: #fff;
-  margin-bottom: 20px;
+  width: 100%;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 2px;
+    bottom: 0px;
+    background-color: rgba(255, 255, 255, 0);
+    transition: width 500ms ease-in-out, background-color 500ms ease-in-out;
+  }
+
+  &:hover::after {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
 `
 
-const NavLink = css`
+export const NavItemActive = css`
+  &::after {
+    width: 100% !important;
+    background-color: rgba(255, 255, 255, 0.6) !important;
+  }
+`
+
+export const NavLink = css`
+  cursor: pointer;
   color: #fff;
   font-size: 1.5rem;
 `
-export { Nav, Rocket, NavItem, NavLink }
+
+export const CloseButton = css`
+  position: absolute;
+  cursor: pointer;
+  top: 10px;
+  right: -24px;
+  border-radius: 4px;
+  transform: rotateY(0deg);
+  transition: transform 500ms ease-in-out;
+  background-color: transparent;
+`
+
+export const CloseButtonActive = css`
+  transform: rotateY(180deg) !important;
+`
+
+export const Rocket = css`
+  position: absolute;
+  bottom: -25px;
+  left: -70px;
+  width: 300px;
+`
