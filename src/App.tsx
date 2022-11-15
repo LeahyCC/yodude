@@ -1,9 +1,11 @@
+import Navigation from './components/Navigation/Navigation'
 import './App.css'
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello World!</h1>
+      <Navigation />
+      <div className="App_Content">container</div>
     </div>
   )
 }
