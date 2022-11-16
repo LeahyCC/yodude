@@ -1,9 +1,5 @@
 import { css } from '@emotion/css'
 
-export const container = css`
-  margin-right: 45px;
-`
-
 export const heading = css`
   font-size: 6rem;
 

@@ -23,6 +23,7 @@ export const NavContainer = css`
 `
 
 export const NavItem = css`
+  cursor: pointer;
   position: relative;
   color: #fff;
   width: 100%;
@@ -54,7 +55,6 @@ export const NavItemActive = css`
 `
 
 export const NavLink = css`
-  cursor: pointer;
   color: #fff;
   font-size: 1.5rem;
 `

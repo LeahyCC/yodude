@@ -1,3 +1,4 @@
+import { useLocation, Link } from 'wouter'
 import classNames from 'classNames'
 import * as style from './navigation.styles'
 import rocket from './rocket.png'
@@ -13,31 +14,34 @@ type NavigationProps = {
   setIsNavOpen: () => void
 }
 
-const Navigation = ({ isNavOpen, setIsNavOpen }: NavigationProps) => {
-  // const [location] = useLocation()
+const navLinks = [
+  {
+    name: 'Home',
+    icon: <AiOutlineHome />,
+  },
+  {
+    name: 'About',
+    icon: <FaInfo />,
+  },
+  {
+    name: 'Projects',
+    icon: <BiGitBranch />,
+  },
+  {
+    name: 'Resume',
+    icon: <CgFileDocument />,
+  },
+]
 
-  const navLinks = [
-    {
-      name: 'Home',
-      path: '/',
-      icon: <AiOutlineHome />,
-    },
-    {
-      name: 'About',
-      path: 'about',
-      icon: <FaInfo />,
-    },
-    {
-      name: 'Projects',
-      path: '/projects',
-      icon: <BiGitBranch />,
-    },
-    {
-      name: 'Resume',
-      path: '/resume',
-      icon: <CgFileDocument />,
-    },
-  ]
+const Navigation = ({ isNavOpen, setIsNavOpen }: NavigationProps) => {
+  const [location] = useLocation()
+
+  const handleScrollToView = (id: string) => {
+    const element = document.getElementById(id)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   return (
     <nav
@@ -56,13 +60,18 @@ const Navigation = ({ isNavOpen, setIsNavOpen }: NavigationProps) => {
       <ul className={style.NavContainer}>
         {navLinks.map((item) => {
           const className = classNames(style.NavItem, {
-            [style.NavItemActive]: true,
+            [style.NavItemActive]: location === `/${item.name.toLowerCase()}`,
           })
+
           return (
             <li className={className} key={item.name}>
-              <a className={style.NavLink}>
+              <Link
+                className={style.NavLink}
+                onClick={() => handleScrollToView(item.name.toLowerCase())}
+                href={`${item.name.toLowerCase()}`}
+              >
                 {isNavOpen ? item.name : item.icon}
-              </a>
+              </Link>
             </li>
           )
         })}

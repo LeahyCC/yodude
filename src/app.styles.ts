@@ -11,15 +11,12 @@ export const App = css`
 `
 
 export const App__content = (isNavOpen: boolean) => css`
+  width: 100%;
   transition: margin-left 300ms ease-in-out;
   margin-left: ${isNavOpen ? '200px' : '40px'};
 `
 
-export const App__heightContainer = (windowSize: {
-  w: number
-  h: number
-}) => css`
-  min-height: ${windowSize.h}px;
+export const App__heightContainer = css`
   display: flex;
   justify-content: center;
   align-items: center;
