@@ -22,7 +22,6 @@ specifiers:
   sass: ^1.56.1
   typescript: ^4.6.4
   vite: ^3.2.3
-  wouter: ^2.8.1
 
 dependencies:
   '@emotion/css': 11.10.5_@babel+core@7.20.2
@@ -31,7 +30,6 @@ dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.6.0_react@18.2.0
-  wouter: 2.8.1_react@18.2.0
 
 devDependencies:
   '@babel/core': 7.20.2
@@ -2838,14 +2836,6 @@ packages:
     resolution: {integrity: sha512-Hz/mrNwitNRh/HUAtM/VT/5VH+ygD6DV7mYKZAtHOrbs8U7lvPS6xf7EJKMF0uW1KJCl0H701g3ZGus+muE5vQ==}
     engines: {node: '>=0.10.0'}
     dev: true
-
-  /wouter/2.8.1_react@18.2.0:
-    resolution: {integrity: sha512-zLYdtGBUgcT/Qs0g/B3L9zVkOGAiqBzEh4zp6rZbeNVFWE0nERscpQDXY8kziFC7a3mQNFP6hd4wv+hoK3s4XQ==}
-    peerDependencies:
-      react: '>=16.8.0'
-    dependencies:
-      react: 18.2.0
-    dev: false
 
   /wrap-ansi/6.2.0:
     resolution: {integrity: sha512-r6lPcBGxZXlIcymEu7InxDMhdW0KDxpLgoFLcguasxCaJ/SOIZwINatK9KY/tf+ZrlywOKU0UDj3ATXUBfxJXA==}

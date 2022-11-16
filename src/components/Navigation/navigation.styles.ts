@@ -74,9 +74,10 @@ export const CloseButtonActive = css`
   transform: rotateY(180deg) !important;
 `
 
-export const Rocket = css`
+export const Rocket = (isNavOpen: boolean) => css`
   position: absolute;
   bottom: -25px;
   left: -70px;
-  width: 300px;
+  width: ${isNavOpen ? '300px' : '200px'};
+  transition: width 400ms ease-in-out;
 `

@@ -1,5 +1,3 @@
-import { useState } from 'react'
-import { Link, useLocation } from 'wouter'
 import classNames from 'classNames'
 import * as style from './navigation.styles'
 import rocket from './rocket.png'
@@ -10,9 +8,13 @@ import { FaInfo } from 'react-icons/fa'
 import { BiGitBranch } from 'react-icons/bi'
 import { CgFileDocument } from 'react-icons/cg'
 
-const Navigation = () => {
-  const [isNavOpen, setIsNavOpen] = useState(false)
-  const [location] = useLocation()
+type NavigationProps = {
+  isNavOpen: boolean
+  setIsNavOpen: () => void
+}
+
+const Navigation = ({ isNavOpen, setIsNavOpen }: NavigationProps) => {
+  // const [location] = useLocation()
 
   const navLinks = [
     {
@@ -22,7 +24,7 @@ const Navigation = () => {
     },
     {
       name: 'About',
-      path: '/about',
+      path: 'about',
       icon: <FaInfo />,
     },
     {
@@ -44,7 +46,7 @@ const Navigation = () => {
       })}
     >
       <button
-        onClick={() => setIsNavOpen((state) => !state)}
+        onClick={() => setIsNavOpen()}
         className={classNames(style.CloseButton, {
           [style.CloseButtonActive]: isNavOpen,
         })}
@@ -54,20 +56,18 @@ const Navigation = () => {
       <ul className={style.NavContainer}>
         {navLinks.map((item) => {
           const className = classNames(style.NavItem, {
-            [style.NavItemActive]: location === item.path,
+            [style.NavItemActive]: true,
           })
           return (
             <li className={className} key={item.name}>
-              <Link to={item.path}>
-                <a className={style.NavLink}>
-                  {isNavOpen ? item.name : item.icon}
-                </a>
-              </Link>
+              <a className={style.NavLink}>
+                {isNavOpen ? item.name : item.icon}
+              </a>
             </li>
           )
         })}
       </ul>
-      <img className={style.Rocket} src={rocket} alt="rocket" />
+      <img className={style.Rocket(isNavOpen)} src={rocket} alt="rocket" />
     </nav>
   )
 }
