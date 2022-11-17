@@ -22,37 +22,46 @@ export const NavContainer = css`
   overflow: hidden;
 `
 
-export const NavItem = css`
-  cursor: pointer;
-  position: relative;
-  color: #fff;
-  width: 100%;
-  margin-bottom: 10px;
-  padding-bottom: 10px;
+export const NavItem = (itemProgressValue: number) => {
+  /**
+   * initial value is a number between 0 and 200
+   * value of 100 is when the content is in the center
+   * formatting so the value is always between 0 and 100
+   */
+  console.log('itemProgressValue', itemProgressValue)
+  const itemValueFormatted =
+    itemProgressValue < 100 ? itemProgressValue : (itemProgressValue - 200) * -1
 
-  &::after {
-    content: '';
-    position: absolute;
-    display: block;
-    width: 0;
-    height: 2px;
-    bottom: 0px;
-    background-color: rgba(255, 255, 255, 0);
-    transition: width 500ms ease-in-out, background-color 500ms ease-in-out;
-  }
-
-  &:hover::after {
+  return css`
+    cursor: pointer;
+    position: relative;
+    color: #fff;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.3);
-  }
-`
+    margin-bottom: 10px;
+    padding-bottom: 10px;
 
-export const NavItemActive = css`
-  &::after {
-    width: 100% !important;
-    background-color: rgba(255, 255, 255, 0.6) !important;
-  }
-`
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: ${itemValueFormatted}%;
+      height: 2px;
+      bottom: 0px;
+      background-color: rgba(255, 255, 255, 0.6);
+    }
+
+    &::before {
+      background-color: rgba(255, 255, 255, 0.1);
+      transition: width 300ms ease-in-out;
+    }
+
+    &:hover::before {
+      background-color: rgba(255, 255, 255, 0.3) !important;
+      width: 100%;
+    }
+  `
+}
 
 export const NavLink = css`
   color: #fff;

@@ -1,4 +1,4 @@
-import { useLocation, Link } from 'wouter'
+import { Link } from 'wouter'
 import classNames from 'classNames'
 import * as style from './navigation.styles'
 import rocket from './rocket.png'
@@ -12,6 +12,12 @@ import { CgFileDocument } from 'react-icons/cg'
 type NavigationProps = {
   isNavOpen: boolean
   setIsNavOpen: () => void
+  containerScrollValues: {
+    home: number
+    about: number
+    projects: number
+    resume: number
+  }
 }
 
 const navLinks = [
@@ -33,9 +39,11 @@ const navLinks = [
   },
 ]
 
-const Navigation = ({ isNavOpen, setIsNavOpen }: NavigationProps) => {
-  const [location] = useLocation()
-
+const Navigation = ({
+  isNavOpen,
+  setIsNavOpen,
+  containerScrollValues,
+}: NavigationProps) => {
   const handleScrollToView = (id: string) => {
     const element = document.getElementById(id)
     if (element) {
@@ -59,12 +67,19 @@ const Navigation = ({ isNavOpen, setIsNavOpen }: NavigationProps) => {
       </button>
       <ul className={style.NavContainer}>
         {navLinks.map((item) => {
-          const className = classNames(style.NavItem, {
-            [style.NavItemActive]: location === `/${item.name.toLowerCase()}`,
-          })
-
+          /**
+           * format the number to be 0 to 200
+           * instead of 0 to 1 (ie: 0.5)
+           */
+          const itemProgressValue = Math.round(
+            containerScrollValues[
+              item.name.toLowerCase() as keyof typeof containerScrollValues
+            ] *
+              100 *
+              2,
+          )
           return (
-            <li className={className} key={item.name}>
+            <li className={style.NavItem(itemProgressValue)} key={item.name}>
               <Link
                 className={style.NavLink}
                 onClick={() => handleScrollToView(item.name.toLowerCase())}
