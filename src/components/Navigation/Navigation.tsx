@@ -1,4 +1,4 @@
-import classNames from 'classNames'
+import classNames from 'classnames'
 import { Link } from 'wouter'
 import * as style from './navigation.styles'
 import rocket from './rocket.png'
