@@ -1,18 +1,25 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import useGetWindowSize from './hooks/useGetWindowSize'
 import InnerPageContainer from './components/InnerPageContainer/InnerPageContainer'
 import Navigation from './components/Navigation/Navigation'
-import Home from './components/Home/Home'
-import About from './components/About/About'
+import Home from './components/Pages/Home'
+import About from './components/Pages/About'
 import * as style from './app.styles'
 
 function App() {
-  const [isNavOpen, setIsNavOpen] = useState(false)
+  const windowSize = useGetWindowSize()
+  const [isNavOpen, setIsNavOpen] = useState(windowSize.w <= 1600)
   const [containerScrollValues, setContainerScrollValues] = useState({
     home: 0,
     about: 0,
     projects: 0,
     resume: 0,
   })
+
+  useEffect(() => {
+    windowSize.w >= 1400 && !isNavOpen && setIsNavOpen(true)
+    windowSize.w <= 1400 && isNavOpen && setIsNavOpen(false)
+  }, [windowSize.w])
 
   const handleNavToggle = () => {
     setIsNavOpen((state) => !state)

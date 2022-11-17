@@ -12,6 +12,7 @@ export const App = css`
 
 export const App__content = (isNavOpen: boolean) => css`
   width: 100%;
+  max-width: 1200px;
   transition: margin-left 300ms ease-in-out;
   margin-left: ${isNavOpen ? '200px' : '40px'};
 `
