@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import InnerPageContainer from './components/InnerPageContainer/InnerPageContainer'
 import Navigation from './components/Navigation/Navigation'
 import Home from './components/Home/Home'

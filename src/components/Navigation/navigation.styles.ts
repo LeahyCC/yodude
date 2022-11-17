@@ -28,7 +28,6 @@ export const NavItem = (itemProgressValue: number) => {
    * value of 100 is when the content is in the center
    * formatting so the value is always between 0 and 100
    */
-  console.log('itemProgressValue', itemProgressValue)
   const itemValueFormatted =
     itemProgressValue < 100 ? itemProgressValue : (itemProgressValue - 200) * -1
 
@@ -48,12 +47,12 @@ export const NavItem = (itemProgressValue: number) => {
       width: ${itemValueFormatted}%;
       height: 2px;
       bottom: 0px;
-      background-color: rgba(255, 255, 255, 0.6);
+      background-color: white;
     }
 
     &::before {
-      background-color: rgba(255, 255, 255, 0.1);
-      transition: width 300ms ease-in-out;
+      background-color: rgba(255, 255, 255, 0.3);
+      transition: width 500ms ease-out;
     }
 
     &:hover::before {

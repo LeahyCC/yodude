@@ -21,7 +21,6 @@ const InnerPageContainer = ({
   })
 
   useEffect(() => {
-    console.log('windowSize', windowSize)
     return scrollYProgress.onChange((latest) => {
       setValue(latest, id)
     })
