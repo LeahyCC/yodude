@@ -29,9 +29,7 @@ const InnerPageContainer = ({
 
   return (
     <div id={id} className={style.InnerPage(windowSize)}>
-      <div ref={ref} style={{ border: '1px solid red' }}>
-        {children}
-      </div>
+      <div ref={ref}>{children}</div>
     </div>
   )
 }

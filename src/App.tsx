@@ -34,7 +34,6 @@ function App() {
       />
       <div className={style.App__content(isNavOpen)}>
         <InnerPageContainer id="home" setValue={handleSetValue}>
-          {containerScrollValues.about}
           <Home />
         </InnerPageContainer>
         <InnerPageContainer id="about" setValue={handleSetValue}>
