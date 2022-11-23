@@ -2,5 +2,5 @@
 
 A simple app with React / Typescript / Vite
 
-[yodude.io](yodude.io)
+[yodude.io](https://yodude.io)
 
