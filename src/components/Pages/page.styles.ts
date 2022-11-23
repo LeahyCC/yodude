@@ -84,3 +84,17 @@ export const image = css`
   max-width: 100%;
   width: 100%;
 `
+export const link = css`
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  > :first-child {
+    margin-right: 10px;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+`

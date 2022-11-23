@@ -4,6 +4,7 @@ import InnerPageContainer from './components/InnerPageContainer/InnerPageContain
 import Navigation from './components/Navigation/Navigation'
 import Home from './components/Pages/Home'
 import About from './components/Pages/About'
+import Contact from './components/Pages/Contact'
 import * as style from './app.styles'
 
 function App() {
@@ -12,8 +13,7 @@ function App() {
   const [containerScrollValues, setContainerScrollValues] = useState({
     home: 0,
     about: 0,
-    projects: 0,
-    resume: 0,
+    contact: 0,
   })
 
   useEffect(() => {
@@ -46,11 +46,8 @@ function App() {
         <InnerPageContainer id="about" setValue={handleSetValue}>
           <About />
         </InnerPageContainer>
-        <InnerPageContainer id="projects" setValue={handleSetValue}>
-          <div>Projects</div>
-        </InnerPageContainer>
-        <InnerPageContainer id="resume" setValue={handleSetValue}>
-          <div>Resume</div>
+        <InnerPageContainer id="contact" setValue={handleSetValue}>
+          <Contact />
         </InnerPageContainer>
       </div>
     </div>

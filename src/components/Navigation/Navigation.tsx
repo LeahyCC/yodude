@@ -6,8 +6,7 @@ import rocket from './rocket.png'
 import { BiArrowFromLeft } from 'react-icons/bi'
 import { AiOutlineHome } from 'react-icons/ai'
 import { FaInfo } from 'react-icons/fa'
-import { BiGitBranch } from 'react-icons/bi'
-import { CgFileDocument } from 'react-icons/cg'
+import { IoMdMail } from 'react-icons/io'
 
 type NavigationProps = {
   isNavOpen: boolean
@@ -15,8 +14,7 @@ type NavigationProps = {
   containerScrollValues: {
     home: number
     about: number
-    projects: number
-    resume: number
+    contact: number
   }
 }
 
@@ -30,12 +28,8 @@ const navLinks = [
     icon: <FaInfo />,
   },
   {
-    name: 'Projects',
-    icon: <BiGitBranch />,
-  },
-  {
-    name: 'Resume',
-    icon: <CgFileDocument />,
+    name: 'Contact',
+    icon: <IoMdMail />,
   },
 ]
 
