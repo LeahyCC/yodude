@@ -73,10 +73,13 @@ const Navigation = ({
               2,
           )
           return (
-            <li className={style.NavItem(itemProgressValue)} key={item.name}>
+            <li
+              className={style.NavItem(itemProgressValue)}
+              onClick={() => handleScrollToView(item.name.toLowerCase())}
+              key={item.name}
+            >
               <Link
                 className={style.NavLink}
-                onClick={() => handleScrollToView(item.name.toLowerCase())}
                 href={`${item.name.toLowerCase()}`}
               >
                 {isNavOpen ? item.name : item.icon}
