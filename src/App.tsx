@@ -8,18 +8,12 @@ import Contact from './components/Pages/Contact'
 import * as style from './app.styles'
 
 function App() {
-  const windowSize = useGetWindowSize()
-  const [isNavOpen, setIsNavOpen] = useState(windowSize.w <= 1600)
+  const [isNavOpen, setIsNavOpen] = useState(false)
   const [containerScrollValues, setContainerScrollValues] = useState({
     home: 0,
     about: 0,
     contact: 0,
   })
-
-  useEffect(() => {
-    windowSize.w >= 1400 && !isNavOpen && setIsNavOpen(true)
-    windowSize.w <= 1400 && isNavOpen && setIsNavOpen(false)
-  }, [windowSize.w])
 
   const handleNavToggle = () => {
     setIsNavOpen((state) => !state)
