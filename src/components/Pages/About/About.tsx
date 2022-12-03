@@ -1,5 +1,6 @@
+import { Suspense, lazy } from 'react'
 import * as styles from '../page.styles'
-import skills from './skills'
+const SkillsList = lazy(() => import('./skills'))
 
 import { HiLightBulb } from 'react-icons/hi'
 
@@ -14,14 +15,9 @@ const About = () => {
         to build and design applications with seamless UX and maintainability. I
         have professional experience building applications from ground up with..
       </p>
-      <ul className={styles.list}>
-        {skills.map((skill) => (
-          <li className={styles.listItem} key={skill.name}>
-            <skill.icon />
-            {skill.name}
-          </li>
-        ))}
-      </ul>
+      <Suspense>
+        <SkillsList />
+      </Suspense>
       <p className={styles.paragraph}>
         Although a developer in title and skill set, I have an eye for design
         and UX. I&apos;m an advocate for quality and find fulfillment in

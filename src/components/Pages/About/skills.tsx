@@ -1,3 +1,5 @@
+import * as styles from '../page.styles'
+
 import {
   SiJest,
   SiTypescript,
@@ -82,4 +84,17 @@ const skills = [
   },
 ]
 
-export default skills
+const SkillsList = () => {
+  return (
+    <ul className={styles.list}>
+      {skills.map((skill) => (
+        <li className={styles.listItem} key={skill.name}>
+          <skill.icon />
+          {skill.name}
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+export default SkillsList
