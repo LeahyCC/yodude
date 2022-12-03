@@ -3,7 +3,7 @@ import useGetWindowSize from './hooks/useGetWindowSize'
 import InnerPageContainer from './components/InnerPageContainer/InnerPageContainer'
 import Navigation from './components/Navigation/Navigation'
 import Home from './components/Pages/Home'
-import About from './components/Pages/About'
+import About from './components/Pages/About/About'
 import Contact from './components/Pages/Contact'
 import * as style from './app.styles'
 
