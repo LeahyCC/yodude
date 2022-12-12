@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react'
-import useGetWindowSize from './hooks/useGetWindowSize'
+import { useState } from 'react'
 import InnerPageContainer from './components/InnerPageContainer/InnerPageContainer'
 import Navigation from './components/Navigation/Navigation'
 import Home from './components/Pages/Home'
