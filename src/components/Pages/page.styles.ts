@@ -82,7 +82,7 @@ export const subHeading = css`
 `
 export const image = css`
   max-width: 100%;
-  width: 100%;
+  width: 70%;
 `
 export const link = css`
   color: white;

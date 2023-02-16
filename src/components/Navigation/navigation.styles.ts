@@ -30,6 +30,7 @@ export const NavItem = (itemProgressValue: number) => {
    */
   const itemValueFormatted =
     itemProgressValue < 100 ? itemProgressValue : (itemProgressValue - 200) * -1
+  // console.log('itemValueFormatted', itemValueFormatted, itemProgressValue)
 
   return css`
     cursor: pointer;

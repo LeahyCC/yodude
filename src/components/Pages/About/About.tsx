@@ -11,21 +11,24 @@ const About = () => {
         <HiLightBulb /> Scalable Solutions
       </h1>
       <p className={styles.paragraph}>
-        Solving software problems with scalable solutions is my passion. I love
-        to build and design applications with seamless UX and maintainability. I
-        have professional experience building applications from ground up with..
+        My passion lies in resolving software issues with scalable solutions. I
+        enjoy crafting and designing applications with a seamless user
+        experience and easy maintenance. With my professional experience, I have
+        successfully built applications from scratch utilizing these tools.
       </p>
       <Suspense>
         <SkillsList />
       </Suspense>
       <p className={styles.paragraph}>
-        Although a developer in title and skill set, I have an eye for design
-        and UX. I&apos;m an advocate for quality and find fulfillment in
-        identifying and facilitating improvements to code, team and scrum
-        processes, developer and end user experiences. I&apos;m a self starter
-        and a team player, always looking to learn and grow. I thrive in a fast
-        past environment where close collaboration between product, QA, and
-        engineering is the norm.
+        As a developer with expertise in both title and skill, I possess a keen
+        sense for design and user experience. My commitment to excellence drives
+        me to continuously identify and promote enhancements to code, team and
+        scrum processes, as well as developer and end-user experiences. With a
+        proactive and collaborative approach, I&apos;m always seeking
+        opportunities to learn and advance, and work effectively both
+        independently and as a part of a team. I thrive in a fast-paced
+        environment where close collaboration among product, QA, and engineering
+        is customary.
       </p>
     </div>
   )

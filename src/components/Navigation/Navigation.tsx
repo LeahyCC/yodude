@@ -72,6 +72,8 @@ const Navigation = ({
               100 *
               2,
           )
+
+          console.log(itemProgressValue)
           return (
             <li
               className={style.NavItem(itemProgressValue)}
