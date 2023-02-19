@@ -8,7 +8,7 @@ A simple app with React / Typescript / Vite
 
 The navigation scroll progress tracker is a feature that displays a progress bar under each navigation element. The progress bar indicates the height of each content element 'page' and shows the user how far they have scrolled through the page.
 
-##### How it Works
+#### How it Works
 
 The navigation scroll progress tracker works by setting state of the scroll position into properties on the object `containerScrollValues`. These properties represent the scroll position of each content element.
 
