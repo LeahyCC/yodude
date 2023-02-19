@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { RiContactsFill } from 'react-icons/ri'
 import { AiFillLinkedin } from 'react-icons/ai'
 import { AiFillGithub } from 'react-icons/ai'
@@ -47,4 +48,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default memo(Contact)

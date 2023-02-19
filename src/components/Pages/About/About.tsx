@@ -1,4 +1,4 @@
-import { Suspense, lazy } from 'react'
+import { Suspense, lazy, memo } from 'react'
 import * as styles from '../page.styles'
 const SkillsList = lazy(() => import('./skills'))
 
@@ -34,4 +34,4 @@ const About = () => {
   )
 }
 
-export default About
+export default memo(About)

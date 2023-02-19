@@ -27,7 +27,7 @@ const InnerPageContainer = ({
   }, [windowSize.h])
 
   return (
-    <div id={id} className={style.InnerPage(windowSize)}>
+    <div id={id} css={style.InnerPage(windowSize)}>
       <div ref={ref}>{children}</div>
     </div>
   )

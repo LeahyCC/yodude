@@ -7,7 +7,7 @@ import Contact from './components/Pages/Contact'
 import * as style from './app.styles'
 
 function App() {
-  const [isNavOpen, setIsNavOpen] = useState(false)
+  const [isNavOpen, setIsNavOpen] = useState(true)
   const [containerScrollValues, setContainerScrollValues] = useState({
     home: 0,
     about: 0,
@@ -26,13 +26,13 @@ function App() {
   }
 
   return (
-    <div className={style.App}>
+    <div css={style.App}>
       <Navigation
         isNavOpen={isNavOpen}
         setIsNavOpen={handleNavToggle}
         containerScrollValues={containerScrollValues}
       />
-      <div className={style.App__content(isNavOpen)}>
+      <div css={style.App__content(isNavOpen)}>
         <InnerPageContainer id="home" setValue={handleSetValue}>
           <Home />
         </InnerPageContainer>

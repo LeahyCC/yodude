@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { MdWavingHand } from 'react-icons/md'
 import * as styles from './page.styles'
 import me from './me.png'
@@ -18,4 +19,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default memo(Home)

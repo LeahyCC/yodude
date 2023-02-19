@@ -1,4 +1,3 @@
-import classNames from 'classnames'
 import { Link } from 'wouter'
 import * as style from './navigation.styles'
 import rocket from './rocket.png'
@@ -46,20 +45,14 @@ const Navigation = ({
   }
 
   return (
-    <nav
-      className={classNames(style.Nav, {
-        [style.NavOpen]: isNavOpen,
-      })}
-    >
+    <nav css={[style.Nav, isNavOpen && style.NavOpen]}>
       <button
         onClick={() => setIsNavOpen()}
-        className={classNames(style.CloseButton, {
-          [style.CloseButtonActive]: isNavOpen,
-        })}
+        css={[style.CloseButton, isNavOpen && style.CloseButtonActive]}
       >
         <BiArrowFromLeft size={24} />
       </button>
-      <ul className={style.NavContainer}>
+      <ul css={style.NavContainer}>
         {navLinks.map((item) => {
           /**
            * format the number to be 0 to 200
@@ -73,24 +66,20 @@ const Navigation = ({
               2,
           )
 
-          console.log(itemProgressValue)
           return (
             <li
-              className={style.NavItem(itemProgressValue)}
+              css={style.NavItem(itemProgressValue)}
               onClick={() => handleScrollToView(item.name.toLowerCase())}
               key={item.name}
             >
-              <Link
-                className={style.NavLink}
-                href={`${item.name.toLowerCase()}`}
-              >
+              <Link css={style.NavLink} href={`${item.name.toLowerCase()}`}>
                 {isNavOpen ? item.name : item.icon}
               </Link>
             </li>
           )
         })}
       </ul>
-      <img className={style.Rocket(isNavOpen)} src={rocket} alt="rocket" />
+      <img css={style.Rocket(isNavOpen)} src={rocket} alt="rocket" />
     </nav>
   )
 }
