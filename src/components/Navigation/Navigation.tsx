@@ -47,6 +47,7 @@ const Navigation = ({
   return (
     <nav css={[style.Nav, isNavOpen && style.NavOpen]}>
       <button
+        aria-label="Toggle Navigation"
         onClick={() => setIsNavOpen()}
         css={[style.CloseButton, isNavOpen && style.CloseButtonActive]}
       >

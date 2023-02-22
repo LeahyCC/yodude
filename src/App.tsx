@@ -6,8 +6,10 @@ import About from './components/Pages/About/About'
 import Contact from './components/Pages/Contact'
 import * as style from './app.styles'
 
+export const navIsOpen = true
+
 function App() {
-  const [isNavOpen, setIsNavOpen] = useState(true)
+  const [isNavOpen, setIsNavOpen] = useState(navIsOpen)
   const [containerScrollValues, setContainerScrollValues] = useState({
     home: 0,
     about: 0,
