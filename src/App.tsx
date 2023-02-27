@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import InnerPageContainer from './components/InnerPageContainer/InnerPageContainer'
 import Navigation from './components/Navigation/Navigation'
-import Home from './components/Pages/Home'
-import About from './components/Pages/About/About'
-import Contact from './components/Pages/Contact'
+import Home from './Pages/Home'
+import About from './Pages/About/About'
+import Contact from './Pages/Contact'
 import * as style from './app.styles'
 
 export const navIsOpen = true
