@@ -73,7 +73,7 @@ const Navigation = ({
               onClick={() => handleScrollToView(item.name.toLowerCase())}
               key={item.name}
             >
-              <Link css={style.NavLink} href={`${item.name.toLowerCase()}`}>
+              <Link css={style.NavLink} href={''}>
                 {isNavOpen ? item.name : item.icon}
               </Link>
             </li>
