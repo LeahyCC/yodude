@@ -11,7 +11,7 @@ export const navIsOpen = true
 function App() {
   const [isNavOpen, setIsNavOpen] = useState(navIsOpen)
   const [containerScrollValues, setContainerScrollValues] = useState({
-    home: 200,
+    home: 0.5,
     about: 0,
     contact: 0,
   })
