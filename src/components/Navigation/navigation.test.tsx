@@ -9,7 +9,7 @@ describe('Navigation', () => {
   const toggleNavigation = () => vi.fn()
   const isNavOpen = navIsOpen
   const containerScrollValues = {
-    home: 0,
+    home: 0.5,
     about: 0,
     contact: 0,
   }
@@ -26,6 +26,10 @@ describe('Navigation', () => {
 
   test('should render successfully', () => {
     expect(screen.queryByRole('navigation')).toBeTruthy()
+  })
+
+  test('should render with home at correct init value', () => {
+    expect(containerScrollValues.home).toBe(0.5)
   })
 
   test('should render with known links', () => {
