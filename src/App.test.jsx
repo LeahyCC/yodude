@@ -1,5 +1,6 @@
 import React from 'react'
 import { render, screen, act, fireEvent } from '@testing-library/react'
+import { expect, beforeEach, describe, test } from 'vitest'
 import App from './App'
 
 describe('App', () => {
@@ -9,14 +10,14 @@ describe('App', () => {
     })
   })
 
-  it('renders App component', () => {
+  test('renders App component', () => {
     const headingText = screen.queryByText(
       'A Frontend Engineer, based in Boulder Colorado.',
     )
     expect(headingText).toBeInTheDocument()
   })
 
-  it('should toggle Navigation open and close', () => {
+  test('should toggle Navigation open and close', () => {
     const nav = screen.queryByRole('navigation')
     const toggleButton = screen.getByRole('button', {
       name: 'Toggle Navigation',
