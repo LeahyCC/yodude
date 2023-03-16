@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, memo } from 'react'
 import { useScroll } from 'framer-motion'
 import useGetWindowSize from '../../hooks/useGetWindowSize'
 import * as style from './innerPageContainer.styles'
@@ -35,4 +35,4 @@ const InnerPageContainer = ({
   )
 }
 
-export default InnerPageContainer
+export default memo(InnerPageContainer)
