@@ -4,12 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scriptComment": {
-    "dev": "Starts the development server. Runs on http://localhost:3000 by default.",
-    "build": "Builds the app for production. Outputs to the dist/ directory.",
-    "preview": "Preview the production build locally. Runs on http://localhost:5000 by default.",
-    "pre-commit": "Runs before a commit is made.",
-    "test": "Runs the test suite. Runs all tests in watch mode by default",
-    "eslint": "Runs eslint on the project"
+    "dev": "Start development server",
+    "build": "Build for production",
+    "preview": "Preview production build",
+    "pre-commit": "Lint staged files",
+    "test": "Run tests in watch mode",
+    "test:staged": "Run tests once",
+    "coverage": "Run tests and generate coverage report",
+    "prepare": "Install husky hooks",
+    "eslint": "Run eslint"
   },
   "scripts": {
     "dev": "vite",
