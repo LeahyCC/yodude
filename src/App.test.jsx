@@ -3,8 +3,6 @@ import { render, screen, act, fireEvent } from '@testing-library/react'
 import { expect, beforeEach, describe, test } from 'vitest'
 import App from './App'
 
-// test
-
 describe('App', () => {
   beforeEach(async () => {
     await act(async () => {
