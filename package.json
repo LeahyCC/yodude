@@ -15,7 +15,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "pre-commit": "lint-staged && pnpm run test:staged && echo 'Linting and testing passed. Now committing... 🤠'",
+    "pre-commit": "lint-staged",
     "test": "vitest",
     "test:staged": "vitest --run",
     "coverage": "vitest run --coverage",
@@ -63,7 +63,8 @@
     "*.{js,jsx,ts,tsx}": [
       "eslint --cache --fix",
       "prettier --write",
-      "git add"
+      "git add",
+      "pnpm run test:staged"
     ],
     "*.{json,md}": [
       "prettier --write",
