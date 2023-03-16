@@ -10,6 +10,7 @@ import * as style from './app.styles'
 
 // Project Pages
 import { GraphQL } from './projects/GraphQL/GraphQL'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 export const IS_NAV_OPEN = true
 
@@ -47,6 +48,7 @@ const HelloWorld4 = () => (
 )
 
 function App() {
+  const queryClient = new QueryClient()
   const [isNavOpen, setIsNavOpen] = useState(IS_NAV_OPEN)
   const [containerScrollValues, setContainerScrollValues] = useState({
     home: 0,
@@ -89,7 +91,9 @@ function App() {
           </InnerPageContainer>
         </div>
       </Route>
-      <Route path="/project/graphql" component={GraphQL} />
+      <QueryClientProvider client={queryClient}>
+        <Route path="/project/graphql" component={GraphQL} />
+      </QueryClientProvider>
     </div>
   )
 }
