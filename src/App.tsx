@@ -17,6 +17,7 @@ function App() {
   })
 
   console.log('hello world')
+  console.log('hello world')
 
   const handleNavToggle = () => {
     setIsNavOpen((state) => !state)
