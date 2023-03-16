@@ -15,8 +15,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "pre-commit": "lint-staged",
+    "pre-commit": "lint-staged && pnpm run test:staged && echo 'Linting and testing passed. Now committing... 🤠'",
     "test": "vitest",
+    "test:staged": "vitest --run",
     "coverage": "vitest run --coverage",
     "prepare": "husky install",
     "eslint": "eslint --ext .js,.jsx,.ts,.tsx,.json,.md,.scss,.html,.yml,.yaml src"
@@ -46,6 +47,7 @@
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "@typescript-eslint/parser": "^5.43.0",
     "@vitejs/plugin-react": "^2.2.0",
+    "@vitest/coverage-c8": "^0.29.3",
     "eslint": "^8.27.0",
     "eslint-plugin-react": "^7.31.10",
     "husky": "^8.0.0",
