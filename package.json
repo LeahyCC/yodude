@@ -8,9 +8,8 @@
     "build": "Builds the app for production. Outputs to the dist/ directory.",
     "preview": "Preview the production build locally. Runs on http://localhost:5000 by default.",
     "pre-commit": "Runs before a commit is made.",
-    "test": "Runs the test suite. Runs all tests once.",
-    "test:watch": "Runs the test suite in watch mode. Runs tests when files change.",
-    "test:coverage": "Runs the test suite with coverage. Outputs a coverage report to the console."
+    "test": "Runs the test suite. Runs all tests in watch mode by default",
+    "eslint": "Runs eslint on the project"
   },
   "scripts": {
     "dev": "vite",
@@ -19,7 +18,8 @@
     "pre-commit": "lint-staged",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "eslint": "eslint --ext .js,.jsx,.ts,.tsx,.json,.md,.scss,.html,.yml,.yaml src"
   },
   "dependencies": {
     "@babel/preset-env": "^7.20.2",

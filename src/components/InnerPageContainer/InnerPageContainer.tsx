@@ -6,7 +6,7 @@ import * as style from './innerPageContainer.styles'
 type InnerPageContainerProps = {
   children: React.ReactNode
   id: string
-  setValue: (value: number, id: string) => void
+  setValue(latest: number, id: string): void
 }
 
 const InnerPageContainer = ({
