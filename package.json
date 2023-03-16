@@ -18,7 +18,8 @@
     "preview": "vite preview",
     "pre-commit": "lint-staged",
     "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@babel/preset-env": "^7.20.2",
