@@ -3,11 +3,11 @@ import { expect, test, beforeEach, describe, vi } from 'vitest'
 
 // components
 import Navigation from './Navigation'
-import { navIsOpen } from '../../App'
+import { IS_NAV_OPEN } from '../../App'
 
 describe('Navigation', () => {
   const toggleNavigation = () => vi.fn()
-  const isNavOpen = navIsOpen
+  const isNavOpen = IS_NAV_OPEN
   const containerScrollValues = {
     home: 0.5,
     about: 0,
@@ -46,6 +46,6 @@ describe('Navigation', () => {
   })
 
   test('should render the navigation open by default', () => {
-    expect(navIsOpen).toBe(true)
+    expect(IS_NAV_OPEN).toBe(true)
   })
 })

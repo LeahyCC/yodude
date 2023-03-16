@@ -6,10 +6,10 @@ import About from './Pages/About/About'
 import Contact from './Pages/Contact'
 import * as style from './app.styles'
 
-export const navIsOpen = true
+export const IS_NAV_OPEN = true
 
 function App() {
-  const [isNavOpen, setIsNavOpen] = useState(navIsOpen)
+  const [isNavOpen, setIsNavOpen] = useState(IS_NAV_OPEN)
   const [containerScrollValues, setContainerScrollValues] = useState({
     home: 0.5,
     about: 0,
