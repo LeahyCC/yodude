@@ -8,8 +8,6 @@ import * as style from './app.styles'
 
 export const IS_NAV_OPEN = true
 
-// test commit
-
 function App() {
   const [isNavOpen, setIsNavOpen] = useState(IS_NAV_OPEN)
   const [containerScrollValues, setContainerScrollValues] = useState({

@@ -63,8 +63,8 @@
     "*.{js,jsx,ts,tsx}": [
       "eslint --cache --fix",
       "prettier --write",
-      "git add",
-      "pnpm run test:staged"
+      "vitest related --run",
+      "git add"
     ],
     "*.{json,md}": [
       "prettier --write",
