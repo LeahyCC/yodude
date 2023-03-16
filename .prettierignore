@@ -2,6 +2,9 @@
 build
 coverage
 
+# Gqlgen
+src/projects/GraphQL/gql
+
 # Logs
 logs
 *.log
