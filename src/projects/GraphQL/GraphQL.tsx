@@ -1,28 +1,8 @@
-import request from 'graphql-request'
-import { useQuery } from '@tanstack/react-query'
-
+import { useStarShips } from './useStarShips'
 import { Ship } from './Ship'
-import { graphql } from './gql'
-
-const allStarshipsWithVariablesQueryDocument = graphql(`
-  query allStarshipsQuery {
-    allStarships {
-      edges {
-        node {
-          ...StarshipItem
-        }
-      }
-    }
-  }
-`)
 
 export const GraphQL = () => {
-  const { data, isLoading, error } = useQuery(['starships'], async () =>
-    request(
-      'https://swapi-graphql.netlify.app/.netlify/functions/index',
-      allStarshipsWithVariablesQueryDocument,
-    ),
-  )
+  const { data, isLoading } = useStarShips()
 
   return (
     <div style={{ width: '100%' }}>
@@ -35,8 +15,8 @@ export const GraphQL = () => {
       <div className="App">
         {data && !isLoading ? (
           <ul>
-            {data.allStarships?.edges?.map(
-              (e, i) => e?.node && <Ship ship={e?.node} key={`ship-${i}`} />,
+            {data?.allStarships?.starships?.map(
+              (ship, i) => ship && <Ship ship={ship} key={`ship-${i}`} />,
             )}
           </ul>
         ) : (

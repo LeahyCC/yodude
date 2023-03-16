@@ -13,8 +13,8 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
-    "\n  query allStarshipsQuery {\n    allStarships {\n      edges {\n        node {\n          ...StarshipItem\n        }\n      }\n    }\n  }\n": types.AllStarshipsQueryDocument,
-    "\n  fragment StarshipItem on Starship {\n    id\n    length\n    manufacturers\n    model\n    name\n    starshipClass\n    maxAtmospheringSpeed\n    hyperdriveRating\n    crew\n    created\n  }\n": types.StarshipItemFragmentDoc,
+    "\n  fragment StarshipItem on Starship {\n    name\n    id\n    model\n    manufacturers\n    starshipClass\n    costInCredits\n    length\n    crew\n    passengers\n    maxAtmospheringSpeed\n    hyperdriveRating\n    MGLT\n    cargoCapacity\n    consumables\n  }\n": types.StarshipItemFragmentDoc,
+    "\n  query allStarshipsQuery {\n    allStarships {\n      starships {\n        ...StarshipItem\n      }\n    }\n  }\n": types.AllStarshipsQueryDocument,
 };
 
 /**
@@ -34,11 +34,11 @@ export function graphql(source: string): unknown;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  query allStarshipsQuery {\n    allStarships {\n      edges {\n        node {\n          ...StarshipItem\n        }\n      }\n    }\n  }\n"): (typeof documents)["\n  query allStarshipsQuery {\n    allStarships {\n      edges {\n        node {\n          ...StarshipItem\n        }\n      }\n    }\n  }\n"];
+export function graphql(source: "\n  fragment StarshipItem on Starship {\n    name\n    id\n    model\n    manufacturers\n    starshipClass\n    costInCredits\n    length\n    crew\n    passengers\n    maxAtmospheringSpeed\n    hyperdriveRating\n    MGLT\n    cargoCapacity\n    consumables\n  }\n"): (typeof documents)["\n  fragment StarshipItem on Starship {\n    name\n    id\n    model\n    manufacturers\n    starshipClass\n    costInCredits\n    length\n    crew\n    passengers\n    maxAtmospheringSpeed\n    hyperdriveRating\n    MGLT\n    cargoCapacity\n    consumables\n  }\n"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  fragment StarshipItem on Starship {\n    id\n    length\n    manufacturers\n    model\n    name\n    starshipClass\n    maxAtmospheringSpeed\n    hyperdriveRating\n    crew\n    created\n  }\n"): (typeof documents)["\n  fragment StarshipItem on Starship {\n    id\n    length\n    manufacturers\n    model\n    name\n    starshipClass\n    maxAtmospheringSpeed\n    hyperdriveRating\n    crew\n    created\n  }\n"];
+export function graphql(source: "\n  query allStarshipsQuery {\n    allStarships {\n      starships {\n        ...StarshipItem\n      }\n    }\n  }\n"): (typeof documents)["\n  query allStarshipsQuery {\n    allStarships {\n      starships {\n        ...StarshipItem\n      }\n    }\n  }\n"];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};
