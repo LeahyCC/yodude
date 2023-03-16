@@ -1,10 +1,33 @@
 # WIP - yodude a portfolio landing page
 
-A simple app with React / Typescript / Vite
+- Deployed using [vercel](https://vercel.com/)
+- [yodude.io](https://yodude.io)
 
-[yodude.io](https://yodude.io)
+## Usage
+- Install `pnpm install`
+- Run locally `pnpm run dev`
+- Test `pnpm run test:staged`
 
-### Feature - Navigation Scroll Progress Tracker
+
+
+## Supporting Packages
+Yodude includes the following features:
+
+- React: A popular JavaScript library for building user interfaces.
+- TypeScript: A typed superset of JavaScript that compiles to plain JavaScript.
+- Vite: A build tool that offers fast and flexible development server and build system.
+- Emotion: A CSS-in-JS library for styling React components.
+- GraphQL: A query language for APIs that allows for more efficient data fetching and type-safe queries.
+- GraphQL Codegen: A tool that generates TypeScript typings and hooks for GraphQL queries.
+- React Query: A library for managing data fetching and caching in React applications.
+- Vitest: Provides a simple and easy-to-use API for testing.
+- Testing Library (React): A testing utility for React that focuses on testing the user's behavior rather than implementation details.
+- Framer Motion: A library for creating smooth, performant animations in React.
+- Wouter: A tiny router for React that uses the newer useRouteMatch hook.
+
+
+
+## Feature - Navigation Scroll Progress Tracker
 
 The navigation scroll progress tracker is a feature that displays a progress bar under each navigation element. The progress bar indicates the height of each content element 'page' and shows the user how far they have scrolled through the page.
 
