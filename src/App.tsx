@@ -16,6 +16,8 @@ function App() {
     contact: 0,
   })
 
+  console.log('hello world')
+
   const handleNavToggle = () => {
     setIsNavOpen((state) => !state)
   }
