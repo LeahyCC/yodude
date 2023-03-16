@@ -17,18 +17,26 @@ type NavigationProps = {
   }
 }
 
-const navLinks = [
+export const navLinks = [
   {
     name: 'Home',
     icon: <AiOutlineHome />,
+    scrollPosition: 0.5,
   },
   {
     name: 'About',
     icon: <FaInfo />,
+    scrollPosition: 0,
+  },
+  {
+    name: 'Projects',
+    icon: <FaInfo />, // TODO: add new icon
+    scrollPosition: 0,
   },
   {
     name: 'Contact',
     icon: <IoMdMail />,
+    scrollPosition: 0,
   },
 ]
 

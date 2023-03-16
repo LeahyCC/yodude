@@ -98,3 +98,10 @@ export const link = css`
     text-decoration: underline;
   }
 `
+export const projectContainer = css`
+  margin: 40px auto 20px;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+`

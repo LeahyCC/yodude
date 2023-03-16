@@ -28,7 +28,9 @@ const InnerPageContainer = ({
 
   return (
     <div id={id} css={style.InnerPage(windowSize)}>
-      <div ref={ref}>{children}</div>
+      <div ref={ref} style={{ width: '100%' }}>
+        {children}
+      </div>
     </div>
   )
 }
