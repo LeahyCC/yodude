@@ -9,7 +9,7 @@ import Projects from './Pages/Projects'
 import * as style from './app.styles'
 
 // Project Pages
-import { GraphQL } from './projects/GraphQL/GraphQL'
+import { GraphQL } from './projects/GraphQL'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 export const IS_NAV_OPEN = true

@@ -29,7 +29,6 @@ specifiers:
   graphql: ^16.6.0
   graphql-request: ^5.2.0
   husky: ^8.0.0
-  identity-obj-proxy: ^3.0.0
   jsdom: ^21.1.1
   lint-staged: ^13.0.3
   prettier: ^2.7.1
@@ -58,7 +57,6 @@ dependencies:
   framer-motion: 7.6.7_biqbaboplfbrettd7655fr4n2y
   graphql: 16.6.0
   graphql-request: 5.2.0_graphql@16.6.0
-  identity-obj-proxy: 3.0.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.6.0_react@18.2.0
@@ -2901,7 +2899,7 @@ packages:
       '@motionone/easing': 10.14.0
       '@motionone/types': 10.14.0
       '@motionone/utils': 10.14.0
-      tslib: 2.4.1
+      tslib: 2.5.0
     dev: false
 
   /@motionone/dom/10.13.1:
@@ -2915,7 +2913,7 @@ packages:
       '@motionone/types': 10.14.0
       '@motionone/utils': 10.14.0
       hey-listen: 1.0.8
-      tslib: 2.4.1
+      tslib: 2.5.0
     dev: false
 
   /@motionone/easing/10.14.0:
@@ -2925,7 +2923,7 @@ packages:
       }
     dependencies:
       '@motionone/utils': 10.14.0
-      tslib: 2.4.1
+      tslib: 2.5.0
     dev: false
 
   /@motionone/generators/10.14.0:
@@ -2936,7 +2934,7 @@ packages:
     dependencies:
       '@motionone/types': 10.14.0
       '@motionone/utils': 10.14.0
-      tslib: 2.4.1
+      tslib: 2.5.0
     dev: false
 
   /@motionone/types/10.14.0:
@@ -2954,7 +2952,7 @@ packages:
     dependencies:
       '@motionone/types': 10.14.0
       hey-listen: 1.0.8
-      tslib: 2.4.1
+      tslib: 2.5.0
     dev: false
 
   /@nodelib/fs.scandir/2.1.5:
@@ -6042,13 +6040,6 @@ packages:
       }
     engines: { node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0 }
 
-  /harmony-reflect/1.6.2:
-    resolution:
-      {
-        integrity: sha512-HIp/n38R9kQjDEziXyDTuW3vvoxxyxjxFzXLrBr18uB47GnSt+G9D29fqrpM5ZkspMcPICud3XsBJQ4Y2URg8g==,
-      }
-    dev: false
-
   /has-bigints/1.0.2:
     resolution:
       {
@@ -6208,16 +6199,6 @@ packages:
     dependencies:
       safer-buffer: 2.1.2
     dev: true
-
-  /identity-obj-proxy/3.0.0:
-    resolution:
-      {
-        integrity: sha512-00n6YnVHKrinT9t0d9+5yZC6UBNJANpYEQvL2LlX6Ab9lnmxzIRcEmTPuyGScvl1+jKuCICX1Z0Ab1pPKKdikA==,
-      }
-    engines: { node: '>=4' }
-    dependencies:
-      harmony-reflect: 1.6.2
-    dev: false
 
   /ieee754/1.2.1:
     resolution:
@@ -9116,13 +9097,13 @@ packages:
       {
         integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==,
       }
+    dev: true
 
   /tslib/2.5.0:
     resolution:
       {
         integrity: sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg==,
       }
-    dev: true
 
   /tsutils/3.21.0_typescript@4.8.4:
     resolution:

@@ -1,23 +1,17 @@
 import { useQuery } from '@tanstack/react-query'
 import request from 'graphql-request'
 import { graphql } from './gql'
+import { StarshipItemFragment, AllStarshipsQueryQuery } from './gql/graphql'
 
 export const ShipFragment = graphql(`
   fragment StarshipItem on Starship {
     name
     id
     model
-    manufacturers
     starshipClass
     costInCredits
     length
-    crew
-    passengers
     maxAtmospheringSpeed
-    hyperdriveRating
-    MGLT
-    cargoCapacity
-    consumables
   }
 `)
 
@@ -40,3 +34,13 @@ export const useStarShips = () =>
         allStarshipsQueryDocument,
       ),
   })
+
+export const removeStarShipNuLLEntities = (
+  data: AllStarshipsQueryQuery | undefined,
+) => {
+  return (
+    (data?.allStarships?.starships?.filter(
+      (item) => item !== null || item !== undefined,
+    ) as StarshipItemFragment[]) || []
+  )
+}

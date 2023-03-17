@@ -7,8 +7,13 @@ const config: CodegenConfig = {
   generates: {
     './src/projects/GraphQL/gql/': {
       preset: 'client',
+      config: {
+        avoidOptionals: true,
+        skipTypename: true,
+      },
     },
   },
+  hooks: { afterAllFileWrite: ['prettier --write'] },
 }
 
 export default config
