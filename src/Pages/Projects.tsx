@@ -35,7 +35,14 @@ const Projects = () => {
                   </li>
                 </ol>
               </div>
-              <a onClick={(e) => handleClick(e, 'https://github.com/LeahyCC')}>
+              <a
+                onClick={(e) =>
+                  handleClick(
+                    e,
+                    'https://github.com/LeahyCC/yodude/tree/main/src/projects/GraphQL',
+                  )
+                }
+              >
                 Repo Link
               </a>
             </div>
