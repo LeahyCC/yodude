@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { Link } from 'wouter'
 import * as style from './navigation.styles'
 import rocket from './rocket.png'
@@ -17,18 +18,26 @@ type NavigationProps = {
   }
 }
 
-const navLinks = [
+export const navLinks = [
   {
     name: 'Home',
     icon: <AiOutlineHome />,
+    scrollPosition: 0.5,
   },
   {
     name: 'About',
     icon: <FaInfo />,
+    scrollPosition: 0,
+  },
+  {
+    name: 'Projects',
+    icon: <FaInfo />, // TODO: add new icon
+    scrollPosition: 0,
   },
   {
     name: 'Contact',
     icon: <IoMdMail />,
+    scrollPosition: 0,
   },
 ]
 
@@ -44,8 +53,8 @@ const Navigation = ({
     }
   }
 
-  return (
-    <nav css={[style.Nav, isNavOpen && style.NavOpen]}>
+  const toggleNavButton = useMemo(() => {
+    return (
       <button
         aria-label="Toggle Navigation"
         onClick={() => setIsNavOpen()}
@@ -53,6 +62,16 @@ const Navigation = ({
       >
         <BiArrowFromLeft size={24} />
       </button>
+    )
+  }, [isNavOpen])
+
+  const rocketImage = useMemo(() => {
+    return <img css={style.Rocket(isNavOpen)} src={rocket} alt="rocket" />
+  }, [isNavOpen])
+
+  return (
+    <nav css={[style.Nav, isNavOpen && style.NavOpen]}>
+      {toggleNavButton}
       <ul css={style.NavContainer}>
         {navLinks.map((item) => {
           /**
@@ -80,7 +99,7 @@ const Navigation = ({
           )
         })}
       </ul>
-      <img css={style.Rocket(isNavOpen)} src={rocket} alt="rocket" />
+      {rocketImage}
     </nav>
   )
 }

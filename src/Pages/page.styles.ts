@@ -98,3 +98,61 @@ export const link = css`
     text-decoration: underline;
   }
 `
+export const projectContainer = css`
+  margin: 40px auto 20px;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+`
+export const project = css`
+  h2 {
+    color: white;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 1.3rem;
+    border-bottom: 1px solid #898989;
+  }
+
+  a {
+    width: fit-content;
+    color: #7ed3e9;
+    padding: 3px;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+    background-color: #3b4252;
+
+    &:hover {
+      background-color: #7ed3e9;
+      color: #2c3446;
+    }
+  }
+
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  height: 140px;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: #3b4252;
+  border: 1px solid #898989;
+  transition: all 0.2s ease-in-out;
+
+  :hover {
+    background-color: #2c3446;
+  }
+`
+
+export const projectList = css`
+  li {
+    display: flex;
+    color: white;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  > li:not(:last-of-type) {
+    margin-bottom: 4px;
+  }
+`
