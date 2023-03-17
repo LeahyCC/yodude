@@ -9,7 +9,6 @@ export const ShipFragment = graphql(`
     id
     model
     starshipClass
-    costInCredits
     length
     maxAtmospheringSpeed
   }

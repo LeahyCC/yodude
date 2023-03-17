@@ -45,15 +45,11 @@ export const ShipsTable = () => {
             cell: (info) => info.getValue(),
           }),
           columnHelper.accessor('maxAtmospheringSpeed', {
-            header: 'Max Speed',
+            header: 'Speed',
             cell: (info) => info.getValue(),
           }),
           columnHelper.accessor('length', {
             header: 'Length',
-            cell: (info) => info.getValue(),
-          }),
-          columnHelper.accessor('costInCredits', {
-            header: 'Cost',
             cell: (info) => info.getValue(),
           }),
         ],
@@ -98,8 +94,8 @@ export const ShipsTable = () => {
                         header.getContext(),
                       )}
                   {{
-                    asc: ' 🔼',
-                    desc: ' 🔽',
+                    asc: '🔼',
+                    desc: '🔽',
                   }[header.column.getIsSorted() as string] ?? null}
                 </th>
               ))}

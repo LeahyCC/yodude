@@ -1,44 +1,58 @@
 import { memo } from 'react'
 import { Link } from 'wouter'
-import { RiContactsFill } from 'react-icons/ri'
-// import { AiFillLinkedin } from 'react-icons/ai'
-// import { AiFillGithub } from 'react-icons/ai'
+import { IoConstruct } from 'react-icons/io5'
+import { BiCubeAlt } from 'react-icons/bi'
+import { SiGraphql } from 'react-icons/si'
+import { CiViewTable } from 'react-icons/ci'
 import * as styles from './page.styles'
+
+const handleClick = (e: any, link: string) => {
+  e.preventDefault()
+  window.open(link, '_blank')
+}
 
 const Projects = () => {
   return (
     <div className={styles.containerFull}>
       <div className={styles.containerHeading}>
         <h1 className={styles.heading}>
-          <RiContactsFill /> Projects
+          <IoConstruct /> Built-in Projects
         </h1>
         <div className={styles.projectContainer}>
-          <div style={{ border: '1px solid red', width: '100%', height: 125 }}>
-            Project 1<h3>Graph QL</h3>
-            <Link href="/project/graphql">
-              <a className="link">See Project</a>
-            </Link>
-          </div>
-          <div style={{ border: '1px solid red', width: '100%', height: 125 }}>
-            Project 1<h3>Graph QL</h3>
-            <Link href="/project/2">
-              <a className="link">Profile 2</a>
-            </Link>
-          </div>
-          <div style={{ border: '1px solid red', width: '100%', height: 125 }}>
-            Project 1<h3>Graph QL</h3>
-            <Link href="/project/3">
-              <a className="link">Profile 3</a>
-            </Link>
-          </div>
-          <div style={{ border: '1px solid red', width: '100%', height: 125 }}>
-            Project 1<h3>Graph QL</h3>
-            <Link href="/project/4">
-              <a className="link">Profile 4</a>
-            </Link>
+          <Link to="/project/graphql">
+            <div className={styles.project}>
+              <div>
+                <h2>GraphQL</h2>
+                <ol className={styles.projectList}>
+                  <li>
+                    GraphQL <SiGraphql />
+                  </li>
+                  <li>
+                    GGL CodeGen <BiCubeAlt />
+                  </li>
+                  <li>
+                    Tanstack Tables <CiViewTable />
+                  </li>
+                </ol>
+              </div>
+              <a onClick={(e) => handleClick(e, 'https://github.com/LeahyCC')}>
+                Repo Link
+              </a>
+            </div>
+          </Link>
+
+          <div className={styles.project} style={{ cursor: 'default' }}>
+            <div>
+              <h2>More to come...</h2>
+            </div>
+            <a
+              onClick={(e) => handleClick(e, 'https://github.com/LeahyCC')}
+              style={{ cursor: 'pointer' }}
+            >
+              My Github
+            </a>
           </div>
         </div>
-        <ul className={styles.list}>List of projects?</ul>
       </div>
     </div>
   )

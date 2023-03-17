@@ -43,6 +43,7 @@ export const tTh = css({
   textAlign: 'left',
   color: '#A7A1AE',
   cursor: 'pointer',
+
   ':hover': {
     backgroundColor: '#323C50',
   },
