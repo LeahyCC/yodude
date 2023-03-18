@@ -12,16 +12,16 @@ export const table = css({
   display: 'table',
   width: '100%',
   borderSpacing: '22px',
-  backgroundColor: '#2C3446',
+  backgroundColor: '#1e2533',
 })
 
 export const tBody = css({})
 
 export const tTr = css({
-  ':nth-child(odd)': {
+  ':nth-of-type(odd)': {
     backgroundColor: '#323C50',
   },
-  ':nth-child(even)': {
+  ':nth-of-type(even)': {
     backgroundColor: '#2C3446',
   },
 })
@@ -32,13 +32,14 @@ export const tTd = css({
   border: '1px solid #2C3446',
   color: '#A7A1AE',
 
-  ':first-child': {
+  ':first-of-type': {
     color: '#FB667A',
   },
 })
 
 export const tTh = css({
-  backgroundColor: '#2C3446',
+  position: 'relative',
+  backgroundColor: '#1e2533',
   padding: '1%',
   textAlign: 'left',
   color: '#A7A1AE',

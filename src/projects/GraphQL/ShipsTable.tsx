@@ -9,7 +9,9 @@ import {
 } from '@tanstack/react-table'
 import { useStarShips, removeStarShipNuLLEntities } from './useStarShips'
 import { StarshipItemFragment } from './gql/graphql'
+import { RiSortAsc, RiSortDesc } from 'react-icons/ri'
 import * as style from './shipsTable.styles'
+import './resizer.css'
 
 export const ShipsTable = () => {
   const { data } = useStarShips()
@@ -34,23 +36,23 @@ export const ShipsTable = () => {
         columns: [
           columnHelper.accessor('name', {
             header: 'Name',
-            cell: (info) => info.getValue(),
+            cell: (info) => info.getValue() ?? 'N/A',
           }),
           columnHelper.accessor('model', {
             header: 'Model',
-            cell: (info) => info.getValue(),
+            cell: (info) => info.getValue() ?? 'N/A',
           }),
           columnHelper.accessor('starshipClass', {
             header: 'Class',
-            cell: (info) => info.getValue(),
+            cell: (info) => info.getValue() ?? 'N/A',
           }),
           columnHelper.accessor('maxAtmospheringSpeed', {
             header: 'Speed',
-            cell: (info) => info.getValue(),
+            cell: (info) => info.getValue() ?? 'N/A',
           }),
           columnHelper.accessor('length', {
             header: 'Length',
-            cell: (info) => info.getValue(),
+            cell: (info) => info.getValue() ?? 'N/A',
           }),
         ],
       }),
@@ -61,6 +63,7 @@ export const ShipsTable = () => {
   const table = useReactTable({
     data: starships,
     columns,
+    enableColumnResizing: true,
     state: {
       sorting,
     },
@@ -73,7 +76,13 @@ export const ShipsTable = () => {
   return (
     <div css={style.container}>
       <table css={style.table}>
-        <thead>
+        <thead
+          {...{
+            style: {
+              width: table.getCenterTotalSize(),
+            },
+          }}
+        >
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
@@ -81,6 +90,9 @@ export const ShipsTable = () => {
                   key={header.id}
                   css={style.tTh}
                   {...{
+                    style: {
+                      width: header.getSize(),
+                    },
                     className: header.column.getCanSort()
                       ? 'cursor-pointer select-none'
                       : '',
@@ -94,9 +106,25 @@ export const ShipsTable = () => {
                         header.getContext(),
                       )}
                   {{
-                    asc: '🔼',
-                    desc: '🔽',
+                    asc: <RiSortAsc />,
+                    desc: <RiSortDesc />,
                   }[header.column.getIsSorted() as string] ?? null}
+                  <div
+                    {...{
+                      onMouseDown: header.getResizeHandler(),
+                      onTouchStart: header.getResizeHandler(),
+                      className: `resizer ${
+                        header.column.getIsResizing() ? 'isResizing' : ''
+                      }`,
+                      style: {
+                        transform: header.column.getIsResizing()
+                          ? `translateX(${
+                              table.getState().columnSizingInfo.deltaOffset
+                            }px)`
+                          : '',
+                      },
+                    }}
+                  />
                 </th>
               ))}
             </tr>
@@ -106,7 +134,15 @@ export const ShipsTable = () => {
           {table.getRowModel().rows.map((row) => (
             <tr key={row.id} css={style.tTr}>
               {row.getVisibleCells().map((cell) => (
-                <td key={cell.id} css={style.tTd}>
+                <td
+                  key={cell.id}
+                  css={style.tTd}
+                  {...{
+                    style: {
+                      width: cell.column.getSize(),
+                    },
+                  }}
+                >
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
                 </td>
               ))}
