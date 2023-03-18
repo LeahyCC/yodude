@@ -21,6 +21,10 @@ const InnerPageContainer = ({
   })
 
   useEffect(() => {
+    setValue(scrollYProgress.get(), id)
+  }, [])
+
+  useEffect(() => {
     return scrollYProgress.onChange((latest) => {
       setValue(latest, id)
     })
