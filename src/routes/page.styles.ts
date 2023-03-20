@@ -114,10 +114,10 @@ export const project = css`
     border-bottom: 1px solid #898989;
   }
 
-  a {
+  > a {
     width: fit-content;
     color: #7ed3e9;
-    padding: 3px;
+    padding: 3px 6px;
     border-radius: 5px;
     transition: all 0.2s ease-in-out;
     background-color: #3b4252;
@@ -148,11 +148,11 @@ export const project = css`
 export const projectList = css`
   li {
     display: flex;
-    color: white;
+    color: #cdcdcd;
     flex-direction: row;
     justify-content: space-between;
   }
-  > li:not(:last-of-type) {
+  li:not(:last-of-type) {
     margin-bottom: 4px;
   }
 `

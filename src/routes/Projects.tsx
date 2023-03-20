@@ -22,13 +22,13 @@ const Projects = () => {
           <Link to="/project/graphql">
             <div className={styles.project}>
               <div>
-                <h2>GraphQL</h2>
+                <h2>GraphQL CodeGen</h2>
                 <ol className={styles.projectList}>
                   <li>
                     GraphQL <SiGraphql />
                   </li>
                   <li>
-                    GGL CodeGen <BiCubeAlt />
+                    GQL CodeGen <BiCubeAlt />
                   </li>
                   <li>
                     Tanstack Tables <CiViewTable />
