@@ -156,3 +156,54 @@ export const projectList = css`
     margin-bottom: 4px;
   }
 `
+export const form = css`
+  width: 60%;
+  max-width: 500px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #2c3446;
+  padding: 1rem;
+  border-radius: 5px;
+  border: 1px solid #898989;
+
+  label {
+    margin-bottom: 0.5rem;
+  }
+
+  input {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #898989;
+    background-color: #1f2029;
+    color: #cdcdcd;
+  }
+
+  textarea {
+    margin-bottom: 1rem;
+    height: 80px;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #898989;
+    background-color: #1f2029;
+    color: #cdcdcd;
+  }
+
+  button {
+    cursor: pointer;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #898989;
+    background-color: #3b4252;
+    color: #cdcdcd;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: #7ed3e9;
+      color: #2c3446;
+    }
+  }
+`
