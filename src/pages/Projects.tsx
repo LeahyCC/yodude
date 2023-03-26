@@ -5,13 +5,41 @@ import { BiCubeAlt } from 'react-icons/bi'
 import { SiGraphql } from 'react-icons/si'
 import { CiViewTable } from 'react-icons/ci'
 import * as styles from './page.styles'
-
-const handleClick = (event: MouseEvent<HTMLElement>, link: string) => {
-  event.preventDefault()
-  window.open(link, '_blank')
-}
+import { ReactJSXElement } from '@emotion/react/types/jsx-namespace'
 
 const Projects = () => {
+  const handleClick = (event: MouseEvent<HTMLElement>, link: string) => {
+    event.preventDefault()
+    window.open(link, '_blank')
+  }
+
+  const project = (
+    routeLink: string,
+    title: string,
+    projectList: { title: string; icon: ReactJSXElement }[],
+    external: { title: string; link: string },
+  ) => {
+    return (
+      <Link to={routeLink}>
+        <div className={styles.project}>
+          <div>
+            <h2>{title}</h2>
+            {projectList?.length > 0 && (
+              <ol className={styles.projectList}>
+                {projectList?.map((item) => (
+                  <li key={item.title}>
+                    {item.title} {item.icon}
+                  </li>
+                ))}
+              </ol>
+            )}
+          </div>
+          <a onClick={(e) => handleClick(e, external.link)}>{external.title}</a>
+        </div>
+      </Link>
+    )
+  }
+
   return (
     <div className={styles.containerFull}>
       <div className={styles.containerHeading}>
@@ -19,46 +47,24 @@ const Projects = () => {
           <IoConstruct /> Built-in Projects
         </h1>
         <div className={styles.projectContainer}>
-          <Link to="/project/graphql">
-            <div className={styles.project}>
-              <div>
-                <h2>GraphQL CodeGen</h2>
-                <ol className={styles.projectList}>
-                  <li>
-                    GraphQL <SiGraphql />
-                  </li>
-                  <li>
-                    GQL CodeGen <BiCubeAlt />
-                  </li>
-                  <li>
-                    Tanstack Tables <CiViewTable />
-                  </li>
-                </ol>
-              </div>
-              <a
-                onClick={(e) =>
-                  handleClick(
-                    e,
-                    'https://github.com/LeahyCC/yodude/tree/main/src/projects/GraphQL',
-                  )
-                }
-              >
-                Repo Link
-              </a>
-            </div>
-          </Link>
+          {project(
+            '/project/graphql',
+            'GraphQL CodeGen',
+            [
+              { title: 'GraphQL', icon: <SiGraphql /> },
+              { title: 'GQL CodeGen', icon: <BiCubeAlt /> },
+              { title: 'Tanstack Tables', icon: <CiViewTable /> },
+            ],
+            {
+              title: 'The Projects Github',
+              link: 'https://github.com/LeahyCC/yodude/tree/main/src/projects/GraphQL',
+            },
+          )}
 
-          <div className={styles.project} style={{ cursor: 'default' }}>
-            <div>
-              <h2>More to come...</h2>
-            </div>
-            <a
-              onClick={(e) => handleClick(e, 'https://github.com/LeahyCC')}
-              style={{ cursor: 'pointer' }}
-            >
-              My Github
-            </a>
-          </div>
+          {project('', 'More to come...', [], {
+            title: 'My Github',
+            link: 'https://github.com/LeahyCC',
+          })}
         </div>
       </div>
     </div>
