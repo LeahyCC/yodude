@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import { memo, MouseEvent } from 'react'
 import { Link } from 'wouter'
 import { IoConstruct } from 'react-icons/io5'
 import { BiCubeAlt } from 'react-icons/bi'
@@ -6,8 +6,8 @@ import { SiGraphql } from 'react-icons/si'
 import { CiViewTable } from 'react-icons/ci'
 import * as styles from './page.styles'
 
-const handleClick = (e: any, link: string) => {
-  e.preventDefault()
+const handleClick = (event: MouseEvent<HTMLElement>, link: string) => {
+  event.preventDefault()
   window.open(link, '_blank')
 }
 
