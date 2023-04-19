@@ -1,5 +1,5 @@
 import { useEffect, useRef, memo } from 'react'
-import { useScroll } from 'framer-motion'
+import { useScroll, useMotionValueEvent } from 'framer-motion'
 import useGetWindowSize from '../../hooks/useGetWindowSize'
 import * as style from './innerPageContainer.styles'
 
@@ -20,14 +20,16 @@ const InnerPageContainer = ({
     target: ref,
   })
 
-  useEffect(() => {
-    setValue(scrollYProgress.get(), id)
-  }, [])
+  const handleScroll = useMotionValueEvent(
+    scrollYProgress,
+    'change',
+    (latest) => {
+      setValue(latest, id)
+    },
+  )
 
   useEffect(() => {
-    return scrollYProgress.onChange((latest) => {
-      setValue(latest, id)
-    })
+    handleScroll
   }, [windowSize.h])
 
   return (
